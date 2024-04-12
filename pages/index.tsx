@@ -30,7 +30,7 @@ export default function Home() {
       <div className="h-screen overflow-auto bg-[#18181C] text-[#D4D4D8]">
         <a
           className="absolute top-0 right-12 p-4 cursor-pointer"
-          href="https://twitter.com/mckaywrigley"
+          href="https://twitter.com/suparious"
           target="_blank"
           rel="noreferrer"
         >
@@ -39,7 +39,7 @@ export default function Home() {
 
         <a
           className="absolute top-0 right-2 p-4 cursor-pointer"
-          href="https://github.com/mckaywrigley/clarity-ai"
+          href="https://github.com/solidrust/srt-clarity-search"
           target="_blank"
           rel="noreferrer"
         >
