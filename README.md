@@ -1,10 +1,10 @@
-# Clarity AI
+# SRT Clarity Search
 
 Clarity is simple [perplexity.ai](https://www.perplexity.ai/) clone. Use the code for whatever you like! :)
 
-If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/mckaywrigley).
+If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/suparious).
 
-[![Clarity AI](./public/screenshot.png)](https://clarity-ai.vercel.app/)
+[![Clarity AI](./public/screenshot.png)](https://solidrust.net/)
 
 ## How It Works
 
