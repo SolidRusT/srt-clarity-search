@@ -43,6 +43,16 @@ npm i
 npm run dev
 ```
 
+## Using Docker
+
+```bash
+docker build -t solidrust/srt-clarity-search -f Dockerfile .
+```
+
+```bash
+docker run -it -p 3000:3000  solidrust/srt-clarity-search
+```
+
 ## Improvement Ideas
 
 Here are some ideas for how to improve Clarity:
