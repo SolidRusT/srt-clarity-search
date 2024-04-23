@@ -5,7 +5,6 @@ export const OpenAIStream = async (prompt: string, apiKey: string) => {
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
 
-  //const res = await fetch("https://api.openai.com/v1/chat/completions", {
   const res = await fetch(OpenAIModel.INFERENCE_URL, {
     headers: {
       "Content-Type": "application/json",
@@ -13,12 +12,30 @@ export const OpenAIStream = async (prompt: string, apiKey: string) => {
     },
     method: "POST",
     body: JSON.stringify({
+      json_schema: {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "string",
+            "description": "A text string containing the answer."
+          },
+          "sources": {
+            "type": "array",
+            "description": "A list of strings, each representing a source citation.",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["answer", "sources"],
+        "additionalProperties": false
+      },
       model: OpenAIModel.DAVINCI_TURBO,
       messages: [
         { role: "system", content: "You are a helpful assistant that accurately answers the user's queries based on the given text." },
         { role: "user", content: prompt }
       ],
-      max_tokens: 160,
+      max_tokens: 200,
       temperature: 0.0,
       stream: true
     })
