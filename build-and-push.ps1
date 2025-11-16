@@ -33,7 +33,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $false)]
-    [string]$GitHub Container RegistryUsername = "suparious",
+    [string]$GHCRUsername = "suparious",
 
     [Parameter(Mandatory = $false)]
     [string]$ImageName = "srt-clarity-search",
@@ -198,7 +198,7 @@ Write-ColorOutput "Image: $fullImageName" $colors.Info
 Write-ColorOutput "Status: Built successfully" $colors.Success
 if ($Push) {
     Write-ColorOutput "Published: Yes" $colors.Success
-    Write-ColorOutput "Public URL: https://hub.docker.com/r/$GitHub Container RegistryUsername/$ImageName" $colors.Info
+    Write-ColorOutput "Public URL: https://hub.docker.com/r/$GHCRUsername/$ImageName" $colors.Info
 }
 else {
     Write-ColorOutput "Published: No (local only)" $colors.Warning
@@ -219,7 +219,7 @@ if (-not $Push) {
 
 if ($Push) {
     Write-ColorOutput "🎉 Image is now publicly available!" $colors.Success
-    Write-Host "   https://hub.docker.com/r/$GitHub Container RegistryUsername/$ImageName" -ForegroundColor Green
+    Write-Host "   https://hub.docker.com/r/$GHCRUsername/$ImageName" -ForegroundColor Green
     Write-Host ""
     Write-ColorOutput "Deploy to Kubernetes:" $colors.Header
     Write-Host "   .\deploy.ps1" -ForegroundColor Cyan
