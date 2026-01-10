@@ -2,7 +2,7 @@
 
 **Project**: Perplexity.ai clone with AI-powered search and web scraping, integrated with vLLM inference
 **Status**: Production deployed at `https://clarity.lab.hq.solidrust.net`
-**Last Updated**: 2025-11-13
+**Last Updated**: January 3, 2026
 **Shaun's Golden Rule**: **No workarounds, no temporary fixes, no disabled functionality. Full solutions only.**
 
 ---
@@ -17,38 +17,20 @@
 1. Read "Project Overview" below
 2. Understand vLLM integration (uses internal cluster service)
 3. Reference deployment patterns as needed
-4. Use ChromaDB for platform integration questions
+4. Check srt-hq-k8s CLAUDE.md for platform integration questions
 
 ---
 
-## 📚 PLATFORM INTEGRATION (ChromaDB Knowledge Base)
+## 📚 PLATFORM INTEGRATION
 
-**When working in this submodule**, you cannot access the parent srt-hq-k8s repository files. Use ChromaDB to query platform capabilities and integration patterns.
+**Related Repositories**:
+- **srt-hq-k8s**: `/Users/shaun/repos/srt-hq-k8s/` - Kubernetes platform (12 nodes)
+- **srt-hq-vllm**: `/Users/shaun/repos/srt-hq-vllm/` - vLLM inference backend
 
-**Collection**: `srt-hq-k8s-platform-guide` (43 docs, updated 2025-11-11)
-
-**Why This Matters for SRT Clarity Search**:
-This application is deployed on the SRT-HQ Kubernetes platform and integrates with:
-- **vLLM Inference Service**: Uses internal K8s service for AI completions
-- **Platform Ingress**: SSL certificate automation via Let's Encrypt DNS-01
-- **Platform Monitoring**: Prometheus metrics and Grafana dashboards
-- **Platform Networking**: ClusterIP services and ingress routing
-
-**Query When You Need**:
-- Platform architecture and three-tier taxonomy
-- vLLM inference service endpoints and configuration
-- Ingress and SSL certificate patterns
-- Platform service discovery and networking
-- Monitoring and logging integration
-
-**Example Queries**:
-```
-"What is the srt-hq-k8s platform architecture?"
-"How do I connect to the vLLM inference service from within the cluster?"
-"What is the vLLM service endpoint URL?"
-"How does ingress and SSL work on the platform?"
-"How do I integrate with platform monitoring?"
-```
+**Platform Features Used**:
+- **vLLM**: `http://vllm.inference.svc.cluster.local:8000/v1` for AI completions
+- **Ingress**: nginx-ingress with TLS (cert-manager DNS-01)
+- **Replicas**: 2 pods for high availability
 
 **When NOT to Query**:
 - ❌ Next.js development (use Next.js docs)
@@ -88,8 +70,8 @@ This application is deployed on the SRT-HQ Kubernetes platform and integrates wi
 
 **Repository**:
 - GitHub: `git@github.com:suparious/srt-clarity-search.git`
-- Submodule: `/mnt/c/Users/shaun/repos/srt-hq-k8s/manifests/apps/srt-clarity-search/`
-- Standalone: `/mnt/c/Users/shaun/repos/srt-clarity-search/`
+- Submodule: `/Users/shaun/repos/srt-hq-k8s/manifests/apps/srt-clarity-search/`
+- Standalone: `/Users/shaun/repos/srt-clarity-search/`
 
 **Deployment**:
 - Dev: `npm run dev` → `http://localhost:3000` (Next.js dev server)
@@ -490,7 +472,7 @@ You're doing well if:
 ✅ You understand this is a Next.js full-stack application (not static SPA)
 ✅ You know the app integrates with vLLM for AI inference
 ✅ You know vLLM is accessed via internal cluster service
-✅ You reference ChromaDB for platform integration questions
+✅ You check srt-hq-k8s CLAUDE.md for platform integration questions
 ✅ You provide complete solutions (never workarounds)
 ✅ You use PowerShell scripts for deployment
 ✅ You validate changes work end-to-end
@@ -514,7 +496,7 @@ You're doing well if:
 
 ---
 
-**Last Updated**: 2025-11-13
+**Last Updated**: January 3, 2026
 **Status**: Production Ready
 **Platform**: SRT-HQ Kubernetes
 **Access**: https://clarity.lab.hq.solidrust.net
